@@ -164,7 +164,7 @@ def  ground_state_psi(h,N_BASIS):
 
     start_time = time.time()
     # 最適化
-    result = minimize(calc_energy, c_initial,constraints=cons, bounds=bounds, method='trust-constr')
+    result = minimize(calc_energy, c_initial,constraints=cons, bounds=bounds, method='Nelder-Mead')
         # タイマー終了
     end_time = time.time()
     execution_time = end_time - start_time
@@ -242,5 +242,5 @@ def  ground_state_psi(h,N_BASIS):
 
     return c
 
-ground_state_psi(50000,11)
+ground_state_psi(50,5)
 

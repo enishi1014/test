@@ -16,7 +16,7 @@ import json
 from datetime import datetime  # for generating timestamp
 import os
 from scipy.optimize import minimize, Bounds
-from libs.ground_state import ground_state_psi
+#from libs.ground_state import ground_state_psi
 
 #N_BASIS = 3
 X_CENTER_MIN = -0.5
@@ -174,7 +174,7 @@ def  first_state_psi(h,N_BASIS):
     c_initial = np.random.rand(N_BASIS * N_BASIS)
     from scipy.optimize import minimize
 
-    result = minimize(model_loss, c_initial,bounds=bounds, constraints=cons, options={'maxiter': 200}, method='trust-constr')
+    result = minimize(model_loss, c_initial,bounds=bounds, constraints=cons,  method='Nelder-Mead')
 
     c = result.x.reshape(N_BASIS, N_BASIS)
     norm = np.tensordot(c, np.tensordot(S, c, axes=([2, 3], [0, 1])), axes=([0, 1], [0, 1]))
@@ -246,5 +246,5 @@ def  first_state_psi(h,N_BASIS):
 
     return c
 
-first_state_psi(50,9)
+first_state_psi(50,5)
 

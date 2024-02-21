@@ -1,0 +1,9 @@
+{
+    "method=trust-constrN_BASIS": 5,
+    "h": 50,
+    "epochs": 3000,
+    "difference": 1.0356292724609375,
+    "difference_minus": 1.235976219177246,
+    "energy": 4.252693704924471,
+    "execution_time": 6.149572134017944
+}
